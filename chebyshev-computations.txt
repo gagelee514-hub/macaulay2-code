@@ -1,0 +1,19 @@
+for e from 1 to 1 do (
+for Cn from 1 to 11 do (
+for d from 1 to 11 do (
+t = 1/d;
+for p from 997 to 997 do (
+if isPrime(p) == true then (
+R = ZZ/p[x, y];
+C = n -> if n == 0 then 1_R else if n == 1 then x else 2*x*C(n-1) - (y^2)*C(n-2);
+Cp = C(Cn);
+ke = floor(t*p^e);
+I = ideal(x^(p^e), y^(p^e), Cp^(ke));
+len = length(R^1/I);
+fsig = 1 - (1/p^(2*e))* len;
+print(e, Cn, d, p, numeric(fsig));
+);
+);
+);
+);
+);
